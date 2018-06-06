@@ -21,7 +21,7 @@ RUN wget ${HELM_LOCATION}/${HELM_FILENAME} && \
     rm ${HELM_FILENAME} && rm -r /linux-amd64
 
 RUN mkdir -p "$(helm home)/plugins"
-RUN helm plugin install https://github.com/databus23/helm-diff
+RUN helm plugin install https://github.com/opendoor-labs/helm-diff
 
 COPY --from=builder /go/src/github.com/roboll/helmfile/dist/helmfile_linux_amd64 /usr/local/bin/helmfile
 
